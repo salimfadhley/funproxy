@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.eclipse.jetty.http2:http2-hpack:9.3.7.v20160115:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.jetty.http2/http2-hpack/jars/http2-hpack-9.3.7.v20160115.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.jetty.http2/http2-hpack/docs/http2-hpack-9.3.7.v20160115-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.jetty.http2/http2-hpack/srcs/http2-hpack-9.3.7.v20160115-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="SBT: org.eclipse.jetty.websocket:javax-websocket-server-impl:9.3.7.v20160115:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.jetty.websocket/javax-websocket-server-impl/jars/javax-websocket-server-impl-9.3.7.v20160115.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.jetty.websocket/javax-websocket-server-impl/docs/javax-websocket-server-impl-9.3.7.v20160115-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.eclipse.jetty.websocket/javax-websocket-server-impl/srcs/javax-websocket-server-impl-9.3.7.v20160115-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

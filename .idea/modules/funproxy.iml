@@ -24,6 +24,70 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-api:1.7.14:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.slf4j:slf4j-simple:1.7.14:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: junit:junit:4.10:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.googlecode.juniversalchardet:juniversalchardet:1.0.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: eu.medsea.mimeutil:mime-util:2.1.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.clapper:grizzled-slf4j_2.10:1.0.2:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.scalatest:scalatest_2.10:2.2.5:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatra.rl:rl_2.10:0.4.10:jar" level="project" />
+    <orderEntry type="library" name="SBT: joda-time:joda-time:2.9.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.joda:joda-convert:1.8.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatra:scalatra-common_2.10:2.4.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatra:scalatra_2.10:2.4.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-compiler:2.10.4:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scala-lang:scala-reflect:2.10.4:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatra:scalatra-scalate_2.10:2.4.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatra.scalate:scalate-core_2.10:1.7.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.scalatra.scalate:scalate-util_2.10:1.7.1:jar" level="project" />
     <orderEntry type="library" name="SBT: org.scala-lang:scala-library:2.10.4:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: ch.qos.logback:logback-classic:1.1.3:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: ch.qos.logback:logback-core:1.1.3:jar" level="project" />
+    <orderEntry type="library" name="SBT: com.ning:async-http-client:1.8.10:jar" level="project" />
+    <orderEntry type="library" name="SBT: io.netty:netty:3.9.2.Final:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: javax.annotation:javax.annotation-api:1.2:jar" level="project" />
+    <orderEntry type="library" name="SBT: javax.servlet:javax.servlet-api:3.1.0:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: javax.transaction:javax.transaction-api:1.2:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: javax.websocket:javax.websocket-api:1.0:jar" level="project" />
+    <orderEntry type="library" name="SBT: net.databinder.dispatch:dispatch-core_2.10:0.11.2:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-alpn-client:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-annotations:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-client:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-continuation:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-deploy:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-jaspi:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-jmx:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-quickstart:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-rewrite:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty:jetty-servlets:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.http2:http2-client:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.http2:http2-common:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.http2:http2-hpack:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.http2:http2-server:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.orbit:javax.activation:1.1.0.v201105071233:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.orbit:javax.mail.glassfish:1.4.1.v201005082020:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.orbit:javax.security.auth.message:1.0.0.v201108011116:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:javax-websocket-client-impl:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:javax-websocket-server-impl:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:websocket-api:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:websocket-client:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:websocket-common:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:websocket-server:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.eclipse.jetty.websocket:websocket-servlet:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.ow2.asm:asm:5.0.1:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.ow2.asm:asm-commons:5.0.1:jar" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="SBT: org.ow2.asm:asm-tree:5.0.1:jar" level="project" />
+    <orderEntry type="library" scope="TEST" name="SBT: org.hamcrest:hamcrest-core:1.1:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-http:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-io:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-jndi:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-plus:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-security:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-server:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-servlet:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-util:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-webapp:9.3.7.v20160115:jar" level="project" />
+    <orderEntry type="library" name="SBT: org.eclipse.jetty:jetty-xml:9.3.7.v20160115:jar" level="project" />
   </component>
 </module>
