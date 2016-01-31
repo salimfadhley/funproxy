@@ -4,11 +4,11 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
-libraryDependencies += "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.4"
-
-libraryDependencies += "org.scala-lang" % "scala-reflect" % "2.11.7"
-
-libraryDependencies += "net.databinder.dispatch" %% "dispatch-core" % "0.11.2"
+//libraryDependencies += "org.scala-lang.modules" % "scala-xml_2.11" % "1.0.4"
+//
+//libraryDependencies += "org.scala-lang" % "scala-reflect" % "2.11.7"
+//
+//libraryDependencies += "net.databinder.dispatch" %% "dispatch-core" % "0.11.2"
 
 libraryDependencies += "junit" % "junit" % "4.10"
 
