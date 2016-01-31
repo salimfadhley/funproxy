@@ -11,7 +11,6 @@ ivyScala := ivyScala.value map {
 }
 
 libraryDependencies += "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provided"
-libraryDependencies += "org.slf4j" % "slf4j-simple" % "1.7.14"
 libraryDependencies += "junit" % "junit" % "4.10" % "test"
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.5" % "test"
 libraryDependencies += "org.scalatra" %% "scalatra" % scalatraVersion
