@@ -1,7 +1,10 @@
 /**
   * Created by salim on 30/01/2016.
   */
-class ProxyServlet extends ScalatraServlet {
+
+import org.scalatra.ScalatraServlet
+
+class ProxyServlet extends ScalatraServlet with ScalateSupport {
 
   //  protected implicit val jsonFormats: Formats = DefaultFormats
 
