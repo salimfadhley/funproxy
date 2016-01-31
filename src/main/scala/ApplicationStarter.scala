@@ -1,5 +1,11 @@
 import java.net.InetSocketAddress
 
+import org.eclipse.jetty.server.Server
+
+import org.eclipse.jetty.webapp.WebAppContext
+import org.scalatra.servlet.ScalatraListener
+import web.ProxyServlet
+
 /**
   * Created by sal on 31/01/16.
   */
@@ -10,7 +16,7 @@ object ApplicationStarter extends App {
   context.setContextPath("/")
   context.setResourceBase("src/main/webapp")
   context.addEventListener(new ScalatraListener)
-  context.addServlet(classOf[DefaultServlet], "/")
+  context.addServlet(classOf[ProxyServlet], "/")
   server.setHandler(context)
   server.start()
   server.join()
