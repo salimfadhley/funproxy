@@ -1,5 +1,16 @@
 import cronish._
+import cronish.dsl._
 
-Cron("0", "*/3", "1,9,22", "11-26", "1-6", "*", "2003")
+val schedule: Cron = Cron("*/2", "*", "*", "*", "*", "*", "*")
 
-job (println("Hello there")) describedAs "General Greetings"
+def foo = {
+  val msg = "hello"
+  println(msg)
+  msg
+}
+
+foo
+
+
+
+job(foo).describedAs("General Greetings").runs(schedule)

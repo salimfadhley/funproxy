@@ -10,8 +10,11 @@ val eventualResponse: Future[WSResponse] = wsClient
   .url("http://audio.resonancefm.com/hooting_yard/")
   .get()
 
+
+
 eventualResponse.onComplete {
   case Success(data) => data.body
   case Failure(err) => s"Error hath occured ${err.getMessage}"
 }
+complete
 

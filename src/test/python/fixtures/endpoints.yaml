@@ -1,0 +1,4 @@
+endpoints:
+  - "/a.yaml"
+  - "/b.yaml"
+  - "/c.yaml"
