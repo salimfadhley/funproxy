@@ -2,7 +2,7 @@ name := "funproxy"
 version := "0.0.1"
 scalaVersion := "2.11.7"
 
-lazy val akkaVersion = "2.4.1"
+lazy val akkaVersion = "2.3.13"
 lazy val jettyVersion = "9.1.0.v20131115"
 lazy val scalatraVersion = "2.4.0"
 
@@ -21,3 +21,5 @@ libraryDependencies += "javax.servlet" % "javax.servlet-api" % "3.1.0" % "provid
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.1.3" % "runtime"
 libraryDependencies += "com.github.philcali" %% "cronish" % "0.1.3"
 libraryDependencies += "com.typesafe.play" %% "play-ws" % "2.4.3"
+
+dependencyOverrides += "org.slf4j" % "slf4j-api" % "1.7.13"
