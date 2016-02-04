@@ -5,12 +5,16 @@
 package web
 
 import org.scalatra.ScalatraServlet
+import org.json4s.{DefaultFormats, Formats}
+import org.scalatra.json._
 
-class ProxyServlet extends ScalatraServlet {
+class ProxyServlet extends ScalatraServlet with JacksonJsonSupport{
 
   var hitCount:Int = 0
 
-  //  protected implicit val jsonFormats: Formats = DefaultFormats
+  before() {
+    contentType = formats("json")
+  }
 
   get("/") {
     response.setHeader("content-type", "text/html")
@@ -22,4 +26,17 @@ class ProxyServlet extends ScalatraServlet {
   get("/status") {
     "OK!"
   }
+
+  get("/foo") {
+    val all:List[EndpointInfo] = List(
+      EndpointInfo("http://foo.bar.baz"),
+      EndpointInfo("http://foo.bar.bof"),
+      EndpointInfo("http://foo.bar.boo")
+    )
+
+    all
+  }
+
+  protected implicit val jsonFormats: Formats = DefaultFormats
 }
+
