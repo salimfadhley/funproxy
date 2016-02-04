@@ -5,7 +5,6 @@ package web
   */
 import org.scalatest.FunSuiteLike
 import org.scalatra.test.scalatest.ScalatraSuite
-
 class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
 
 
@@ -17,12 +16,10 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
     }
 
     get("/foo") {
-      val all:List[EndpointInfo] = List(
-        EndpointInfo("http://foo.bar.baz"),
-        EndpointInfo("http://foo.bar.bof"),
-        EndpointInfo("http://foo.bar.boo")
+      val baseUrl = request.getRequestURL.toString
+      List("a", "b", "c").map((s: String) =>
+        EndpointInfo(baseUrl + "/" + s)
       )
-      all
     }
 
   }

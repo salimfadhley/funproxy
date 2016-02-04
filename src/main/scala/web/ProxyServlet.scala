@@ -15,12 +15,10 @@ class ProxyServlet extends JSONServlet{
   }
 
   get("/foo") {
-    val all:List[EndpointInfo] = List(
-      EndpointInfo("http://foo.bar.baz"),
-      EndpointInfo("http://foo.bar.bof"),
-      EndpointInfo("http://foo.bar.boo")
+    val baseUrl = request.getRequestURL.toString
+    List("a", "b", "c").map((s: String) =>
+      EndpointInfo(baseUrl + "/" + s)
     )
-    all
   }
 
 
