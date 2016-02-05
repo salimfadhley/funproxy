@@ -6,6 +6,8 @@ package web
 
 import org.scalatest.FunSuiteLike
 import org.scalatra.test.scalatest.ScalatraSuite
+
+
 class FixtureServlet extends JSONServlet {
   var hitCount: Int = 0
 
@@ -26,8 +28,6 @@ class FixtureServlet extends JSONServlet {
 }
 
 class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
-
-
 
   addServlet(classOf[FixtureServlet], "/fixtures/*")
   addServlet(classOf[ProxyServlet], "/proxy/*")
