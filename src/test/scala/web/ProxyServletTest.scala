@@ -3,7 +3,6 @@ package web
 /**
   * Created by salim on 03/02/2016.
   */
-
 import org.scalatest.FunSuiteLike
 import org.scalatra.test.scalatest.ScalatraSuite
 
@@ -40,13 +39,17 @@ class FixtureServlet extends JSONServlet {
 
 class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
   addServlet(classOf[FixtureServlet], "/fixtures/*")
-  addServlet(classOf[ProxyServlet], "/proxy/*")
+
+  val model = new ProxyModel(EndpointInfo.makeFromStrings(List("http://foo.bar", "http://bar.foo")))
+  addServlet(new ProxyServlet(model), "/proxy/*")
 
   test("get status") {
+
     get("/proxy/status") {
       status should equal(200)
       body should include("OK!")
     }
+
   }
 
   test("get foo") {
@@ -61,6 +64,12 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
       ProxyModel(JsonDecode.decodeEndpointInfoList(body))
     }
   }
+}
+
+class ProxyServletWithActualData extends ScalatraSuite with FunSuiteLike {
+  addServlet(classOf[FixtureServlet], "/fixtures/*")
+
+
 
 
 

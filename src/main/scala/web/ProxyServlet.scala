@@ -5,7 +5,7 @@
 package web
 
 
-class ProxyServlet extends JSONServlet{
+class ProxyServlet(model:ProxyModel) extends JSONServlet{
   var hitCount:Int = 0
 
   get("/status") {
