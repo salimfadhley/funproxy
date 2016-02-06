@@ -3,6 +3,7 @@ package web
 /**
   * Created by salim on 03/02/2016.
   */
+
 import org.scalatest.FunSuiteLike
 import org.scalatra.test.scalatest.ScalatraSuite
 
@@ -11,7 +12,9 @@ class FixtureServlet extends JSONServlet {
   var hitCount: Int = 0
 
   get("/status") {
-    new StatusInfo(request.getRequestURL.toString, 0, "OK!")
+    val url: String = request.getRequestURL.toString
+    val baseUrl: String = url.slice(0, url.length - 7)
+    new StatusInfo(baseUrl, 0, "OK!")
   }
 
   get("/foo") {
@@ -65,18 +68,30 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
 }
 
 class ProxyServletWithActualData extends ScalatraSuite with FunSuiteLike {
-  val model = new ProxyServlet(ProxyModel.defaultProxyModel)
+  val model = ProxyModel.defaultProxyModel
+  val servlet = new ProxyServlet(model)
   addServlet(new FixtureServlet, "/fixtures/*")
-  addServlet(model, "/proxy/*")
+  addServlet(servlet, "/proxy/*")
 
   test("update model from fixtures") {
 
-    model.updateFromWeb()
+    val port: Int = localPort match {
+      case Some(x) => x
+      case _ => throw new RuntimeException("No port")
+    }
+
+    val allRoot: String = s"http://localhost:$port"
+    val fixturesRoot: String = s"$allRoot/fixtures"
+    val serviceInfo: String = s"$fixturesRoot/foo"
+    val proxyRoot: String = s"$allRoot/proxy"
+
+    model.updateFromWeb(s"$fixturesRoot/foo")
+
+    assert(model.roundRobinUrl==s"$serviceInfo/a")
+    assert(model.roundRobinUrl==s"$serviceInfo/b")
+
 
   }
-
-
-
 
 
 }

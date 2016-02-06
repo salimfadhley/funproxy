@@ -1,12 +1,25 @@
 package web
 
+import scala.io.{BufferedSource, Source}
+
 /**
   * Created by salim on 06/02/2016.
   */
-case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
 
-  def roundRobinUrl = {
-    endpoints.endpoints(getAndIncrementSourceIndex).url
+
+/*
+
+import scala.io.Source
+val html = Source.fromURL("http://google.com")
+val s = html.mkString
+println(s)
+
+
+ */
+
+case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
+  def updateFromWeb(url: String): Unit = {
+    endpoints = JsonDecode.decodeEndpointInfoList(Source.fromURL(url).mkString)
   }
 
 
@@ -20,6 +33,10 @@ case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
     getAndIncrementCount % endpoints.endpoints.length
   }
 
+
+  def roundRobinUrl:String = {
+    endpoints.endpoints(getAndIncrementSourceIndex).url
+  }
 }
 
 object ProxyModel {
