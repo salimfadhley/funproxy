@@ -6,6 +6,7 @@ import org.json4s.jackson.JsonMethods._
 
 
 object JsonDecode {
+
   implicit val formats = DefaultFormats
 
   val notNullFormats = new DefaultFormats {
@@ -13,7 +14,11 @@ object JsonDecode {
   }
 
   def decodeEndpointInfoList(json: String): EndpointInfo = {
-     parse(json).extract[EndpointInfo]
+    parse(json).extract[EndpointInfo]
+  }
+
+  def decodeStatus(json: String):StatusInfo = {
+    parse(json).extract[StatusInfo]
   }
 
 }

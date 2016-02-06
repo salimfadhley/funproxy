@@ -11,9 +11,7 @@ class FixtureServlet extends JSONServlet {
   var hitCount: Int = 0
 
   get("/status") {
-    val ret = s"OK! $hitCount"
-    hitCount += 1
-    ret
+    new StatusInfo(request.getRequestURL.toString, 0, "OK!")
   }
 
   get("/foo") {
@@ -45,9 +43,9 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
 
   test("get status") {
 
-    get("/proxy/status") {
+    get("/fixtures/status") {
       status should equal(200)
-      body should include("OK!")
+      JsonDecode.decodeStatus(body).status should include("OK!")
     }
 
   }
@@ -69,7 +67,7 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
 class ProxyServletWithActualData extends ScalatraSuite with FunSuiteLike {
   val model = new ProxyServlet(ProxyModel.defaultProxyModel)
   addServlet(new FixtureServlet, "/fixtures/*")
-  addServlet(model, "proxy")
+  addServlet(model, "/proxy/*")
 
   test("update model from fixtures") {
 
