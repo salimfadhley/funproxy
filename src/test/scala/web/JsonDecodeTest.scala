@@ -8,16 +8,16 @@ import org.scalatest.FunSuite
 class JsonDecodeTest extends FunSuite {
 
   test("Simple JSON Decode") {
-    val json:String = "[{\"url\":\"http://foo\"}]"
-    val result:List[EndpointInfo] = JsonDecode.decodeEndpointInfoList(json)
-    val expected:List[EndpointInfo] = List(new EndpointInfo("http://foo"))
+    val json:String = "{\"endpoints\":[{\"url\":\"http://foo\"}]}"
+    val result:EndpointInfo = JsonDecode.decodeEndpointInfoList(json)
+    val expected:EndpointInfo = new EndpointInfo(List(new SingleEndpointInfo("http://foo")))
     assert(result==expected)
   }
 
   test("Two-line JSON Decode") {
-    val json:String = "[{\"url\":\"http://foo\"}, {\"url\":\"http://bar\"}]"
-    val result:List[EndpointInfo] = JsonDecode.decodeEndpointInfoList(json)
-    val expected:List[EndpointInfo] = List(new EndpointInfo("http://foo"), new EndpointInfo("http://bar"))
+    val json:String = "{\"endpoints\":[{\"url\":\"http://foo\"}, {\"url\":\"http://bar\"}]}"
+    val result:EndpointInfo = JsonDecode.decodeEndpointInfoList(json)
+    val expected:EndpointInfo = new EndpointInfo(List(new SingleEndpointInfo("http://foo"), new SingleEndpointInfo("http://bar")))
     assert(result==expected)
   }
 

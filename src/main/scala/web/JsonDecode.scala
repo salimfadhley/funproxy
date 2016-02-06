@@ -12,9 +12,8 @@ object JsonDecode {
     override val allowNull = false
   }
 
-  def decodeEndpointInfoList(json: String): List[EndpointInfo] = {
-    List(new EndpointInfo("http://foo"))
-    parse(json).extract[List[EndpointInfo]]
+  def decodeEndpointInfoList(json: String): EndpointInfo = {
+     parse(json).extract[EndpointInfo]
   }
 
 }

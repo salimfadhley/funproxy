@@ -19,9 +19,9 @@ class FixtureServlet extends JSONServlet {
 
   get("/foo") {
     val baseUrl = request.getRequestURL.toString
-    List("a", "b", "c").map((s: String) =>
-      EndpointInfo(baseUrl + "/" + s)
-    )
+    new EndpointInfo(List("a", "b", "c").map((s: String) =>
+      SingleEndpointInfo(baseUrl + "/" + s)
+    ))
   }
 
 
