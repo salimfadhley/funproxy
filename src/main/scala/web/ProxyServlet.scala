@@ -6,6 +6,8 @@ package web
 
 
 class ProxyServlet(model:ProxyModel) extends JSONServlet{
+  def updateFromWeb(): Unit = {}
+
   var hitCount:Int = 0
 
   get("/status") {

@@ -67,7 +67,15 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
 }
 
 class ProxyServletWithActualData extends ScalatraSuite with FunSuiteLike {
-  addServlet(classOf[FixtureServlet], "/fixtures/*")
+  val model = new ProxyServlet(ProxyModel.defaultProxyModel)
+  addServlet(new FixtureServlet, "/fixtures/*")
+  addServlet(model, "proxy")
+
+  test("update model from fixtures") {
+
+    model.updateFromWeb()
+
+  }
 
 
 

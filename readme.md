@@ -14,3 +14,8 @@ Features such as:
 * Periodically run an activity
 * Rewrite a URL
 * Test a web-proxy
+
+Stuff to check out
+------------------
+
+* http://alvinalexander.com/scala/scala-how-to-download-url-contents-to-string-file

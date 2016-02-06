@@ -3,7 +3,8 @@ package web
 /**
   * Created by salim on 06/02/2016.
   */
-case class ProxyModel(endpoints:EndpointInfo, var accessCount:Int=0) {
+case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
+
   def roundRobinUrl = {
     endpoints.endpoints(getAndIncrementSourceIndex).url
   }
@@ -19,4 +20,9 @@ case class ProxyModel(endpoints:EndpointInfo, var accessCount:Int=0) {
     getAndIncrementCount % endpoints.endpoints.length
   }
 
+}
+
+object ProxyModel {
+
+  def defaultProxyModel:ProxyModel = new ProxyModel(endpoints = EndpointInfo.makeFromStrings(List()))
 }
