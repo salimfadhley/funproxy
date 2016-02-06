@@ -23,4 +23,11 @@ class ProxyModelTest extends FunSuite {
     assert(m.getAndIncrementSourceIndex==0)
   }
 
+  test("Verify that we can round-ribin the URLs") {
+    val m = new ProxyModel(testEndpoints)
+    assert(m.roundRobinUrl == "http://foo.bar")
+    assert(m.roundRobinUrl == "http://bar.foo")
+    assert(m.roundRobinUrl == "http://foo.bar")
+  }
+
 }
