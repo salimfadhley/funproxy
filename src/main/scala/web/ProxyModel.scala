@@ -18,6 +18,11 @@ println(s)
  */
 
 case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
+  def fetchReSult(): String = {
+    Source.fromURL(roundRobinUrl).toString()
+  }
+
+
   def updateFromWeb(url: String): Unit = {
     endpoints = JsonDecode.decodeEndpointInfoList(Source.fromURL(url).mkString)
   }
@@ -40,6 +45,5 @@ case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
 }
 
 object ProxyModel {
-
   def defaultProxyModel:ProxyModel = new ProxyModel(endpoints = EndpointInfo.makeFromStrings(List()))
 }
