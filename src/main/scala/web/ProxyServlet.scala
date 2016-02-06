@@ -17,7 +17,6 @@ class ProxyServlet extends JSONServlet{
   get("/foo") {
     val baseUrl = request.getRequestURL.toString
     val foo = List("a", "b", "c")
-
     EndpointInfo(foo.map((s: String) =>
       SingleEndpointInfo(baseUrl + "/" + s)
     ))

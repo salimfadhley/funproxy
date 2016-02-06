@@ -24,11 +24,21 @@ class FixtureServlet extends JSONServlet {
     ))
   }
 
+  get("/foo/a") {
+    "a"
+  }
+
+  get("/foo/b") {
+    "c"
+  }
+
+  get("/foo/c") {
+    "c"
+  }
 
 }
 
 class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
-
   addServlet(classOf[FixtureServlet], "/fixtures/*")
   addServlet(classOf[ProxyServlet], "/proxy/*")
 
@@ -45,12 +55,13 @@ class ProxyServletTest extends ScalatraSuite with FunSuiteLike {
     }
   }
 
-  test("verify fixtures") {
+
+  test("build model from fixtures content") {
     get("/fixtures/foo") {
-      status should equal(200)
-      //      body should include ("a" +
-      //        "")
+      ProxyModel(JsonDecode.decodeEndpointInfoList(body))
     }
   }
+
+
 
 }
