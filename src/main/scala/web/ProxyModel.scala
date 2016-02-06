@@ -11,4 +11,8 @@ case class ProxyModel(endpoints:EndpointInfo, var accessCount:Int=0) {
     result
   }
 
+  def getAndIncrementSourceIndex:Int = {
+    getAndIncrementCount % endpoints.endpoints.length
+  }
+
 }

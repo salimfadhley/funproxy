@@ -16,4 +16,11 @@ class ProxyModelTest extends FunSuite {
     assert(m.getAndIncrementCount==2)
   }
 
+  test("Verify that we can access and increment index pointer") {
+    val m = new ProxyModel(testEndpoints)
+    assert(m.getAndIncrementSourceIndex==0)
+    assert(m.getAndIncrementSourceIndex==1)
+    assert(m.getAndIncrementSourceIndex==0)
+  }
+
 }
