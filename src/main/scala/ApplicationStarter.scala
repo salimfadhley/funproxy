@@ -12,25 +12,19 @@ import web.{EndpointInfo, ProxyModel, ProxyServlet}
   */
 object ApplicationStarter extends App {
 
-  def buildJettyServer(model:ProxyModel) = {
+  def buildJettyServer() = {
     val socketAddress = new InetSocketAddress(8080)
     val server = new Server(socketAddress)
     val context = new WebAppContext()
-
-    val servlet = new ProxyServlet(model)
-    val servletHolder:ServletHolder = new ServletHolder(servlet)
-
     context.setContextPath("/")
     context.setResourceBase("src/main/webapp")
-
     context.addEventListener(new ScalatraListener)
-    context.addServlet(servletHolder, "/")
     server.setHandler(context)
     server
   }
 
   val model = ProxyModel.defaultProxyModel
-  val server = buildJettyServer(model)
+  val server = buildJettyServer()
 
   server.start()
   server.join()
