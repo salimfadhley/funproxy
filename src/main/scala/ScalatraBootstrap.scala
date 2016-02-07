@@ -7,8 +7,7 @@ import web.{ProxyModel, ProxyServlet}
   */
 class ScalatraBootstrap extends LifeCycle {
   override def init(context: ServletContext): Unit = {
-    val model = ProxyModel.defaultProxyModel
-    context.mount(new ProxyServlet(model=model), "/*")
+    context.mount(new ProxyServlet(model=GlobalState.proxyModel), "/*")
   }
 
 }
