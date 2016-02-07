@@ -3,6 +3,9 @@ package web
 /**
   * Created by salim on 06/02/2016.
   */
+
+case class Foober(x:String)
+
 class FixtureServlet extends JSONServlet {
   var hitCount: Int = 0
 
@@ -19,16 +22,8 @@ class FixtureServlet extends JSONServlet {
     ))
   }
 
-  get("/foo/a") {
-    "a"
-  }
-
-  get("/foo/b") {
-    "c"
-  }
-
-  get("/foo/c") {
-    "c"
+  get("/foo/:id") {
+    Foober(params("id"))
   }
 
 }

@@ -18,8 +18,12 @@ println(s)
  */
 
 case class ProxyModel(var endpoints:EndpointInfo, var accessCount:Int=0) {
+  def getUrl(url: String):String = {
+    Source.fromURL(url).toString()
+  }
+
   def fetchReSult(): String = {
-    Source.fromURL(roundRobinUrl).toString()
+    getUrl(roundRobinUrl)
   }
 
 

@@ -1,13 +1,14 @@
 import javax.servlet.ServletContext
 import org.scalatra.LifeCycle
-import web.ProxyServlet
+import web.{ProxyModel, ProxyServlet}
 
 /**
   * Created by salim on 31/01/2016.
   */
 class ScalatraBootstrap extends LifeCycle {
   override def init(context: ServletContext): Unit = {
-    context.mount(new ProxyServlet(model=null), "/*")
+    val model = ProxyModel.defaultProxyModel
+    context.mount(new ProxyServlet(model=model), "/*")
   }
 
 }

@@ -8,11 +8,16 @@ package web
 class ProxyServlet(model:ProxyModel) extends JSONServlet{
   def updateFromWeb(): Unit = {}
 
-  get("/") {
-    model.fetchReSult()
+  get("/x") {
+//    model.fetchReSult()
+    List("A", "B", "C")
   }
 
   get("/status") {
+    new StatusInfo(url=request.getRequestURL.toString, model.accessCount, "OK!")
+  }
+
+  get("/") {
     new StatusInfo(url=request.getRequestURL.toString, model.accessCount, "OK!")
   }
 }

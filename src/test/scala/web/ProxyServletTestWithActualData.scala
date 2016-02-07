@@ -31,16 +31,18 @@ class ProxyServletTestWithActualData extends ScalatraSuite with FunSuiteLike {
       case _ => throw new RuntimeException("No port")
     }
     model.updateFromWeb(s"http://localhost:$port/fixtures/foo")
-
     assert(model.roundRobinUrl==s"http://localhost:$port/fixtures/foo/a")
     assert(model.roundRobinUrl==s"http://localhost:$port/fixtures/foo/b")
-//
-//    get(s"/proxy/") {
-//      status should equal(200)
-//      assert("c"==body)
-//    }
-//
-//
+
+  }
+
+  test("model can fetch data") {
+
+    val port: Int = localPort match {
+      case Some(x) => x
+      case _ => throw new RuntimeException("No port")
+    }
+    assert(model.getUrl(s"http://localhost:$port/fixtures/foo/a")=="a")
   }
 
 
